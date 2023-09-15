@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    background:
+        radial-gradient(circle closest-side, #5a3310 35%, #3E2000 100%),
+        radial-gradient(circle closest-side, #5a3310 15%, #3E2000 100%) 100px 50px,
+        radial-gradient(circle closest-side, #5a3310 10%, #3E2000 100%) 50px 100px,
+        radial-gradient(circle closest-side, #5a3310 20%, #3E2000 100%) 150px 200px,
+        radial-gradient(circle closest-side, #5a3310 25%, #3E2000 100%) 75px 250px,
+        linear-gradient(to bottom, #8B4513, #4CAF50);
+    background-size: 250px 350px; 
+}
+
+
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    background: linear-gradient(#87ceeb,#e0f6ff);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+.jump{
+    animation: mario-animation 500ms  ease-out;
+    
+}
+.clouds{
+    position: absolute;
+    width: 550px; 
+    animation: clouds-animation 7s infinite linear;
+}
+.clouds1{
+    position: absolute;
+    width: 550px; 
+    animation: clouds-animation1 5s infinite linear;
+}
+
+@keyframes clouds-animation1{
+    from{
+        right: 100%;
+    }
+    to{
+        right: -50vw;
+    }
+
+}
+
+@keyframes clouds-animation{
+    from{
+         right: -50vw;
+    }
+    to{
+        right: 100%;
+    }
+
+}
+@keyframes pipe-animation{
+    from{
+        right: -180px;
+    
+    }
+    to{
+        right: 100%;
+    }
+    
+}
+
+@keyframes mario-animation{
+  0%{
+    bottom: 0;
+  }
+  20%{
+    bottom: 180px;
+  }
+  40%{
+    bottom: 180px;
+  }
+  60%{
+    bottom: 160px;
+  }
+  100%{
+    bottom: 0;
+  }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.game-over-image {
+    width: 50%; /* ajuste como preferir */
+    max-width: 400px; /* ajuste como preferir */
+    display: block;
+    margin: 0 auto;
+}
+
+#restartGame {
+    background-color: #FF5733; /* cor laranja brilhante */
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* sombra de texto para dar um efeito 3D */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#restartGame:hover {
+    background-color: #FF704D; /* cor laranja mais clara no hover */
+    transform: scale(1.05); /* faz o botão aumentar um pouco ao passar o mouse */
+}
+
+#restartGame:active {
+    background-color: #FF4300; /* cor laranja mais escura quando pressionado */
+    transform: scale(0.95); /* diminui um pouco o botão quando pressionado */
+}
+
+#restartGame:focus {
+    outline: none; /* remove o contorno padrão ao focar no botão */
+    box-shadow: 0 0 8px rgba(255, 87, 51, 0.7); /* adiciona uma sombra ao focar */
+}
+
+
+
