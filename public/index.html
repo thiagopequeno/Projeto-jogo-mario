@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/index.js"></script>
-    <title>Its me Mario</title>
-
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <title>Cadastro</title>
 </head>
-
 <body>
-    <div class="game-board">
-        <img src="./images/mario.gif" class="mario" alt="">
-        <img src="./images/pipe.png" alt="" class="pipe">
-        <img src="./images/clouds.png" alt="" class="clouds">
-        <img src="./images/clouds.png" alt="" class="clouds1">
+    <div class="background-image"></div>
 
-        <!-- Modal -->
-        <div id="gameOverModal" class="modal">
-            <div class="modal-content">
-                <img src="./images/perdeu.png" alt="Game Over" class="game-over-image">
-                <button id="restartGame">Reiniciar</button>
-            </div>
-        </div>
+    <div class="modal">
+        <h2>Mario Signup</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="nome" name="name" required>
 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="senha" name="password" required>
+
+            <button onclick="cadastrar()" id="botaocadastro">Signup</button>
     </div>
 </body>
-
 </html>
+<script>
+    
+function cadastrar(){
+
+        fetch("/usuario/cadastrar",
+        {
+            method:"POST",
+            body:JSON.stringify({
+        nome:document.getElementById("nome").value,
+        email:document.getElementById("email").value,
+        senha:document.getElementById("senha").value
+    }),
+    headers:{
+        "Content-type":"application/json"
+    }
+}).then((res)=>{
+    return res.json()
+}).then((res)=>{
+    if(res.status == "ok"){
+        alert("Cadastrado com sucesso")
+        window.location.href = "/jogo.html"
+    }else{
+        alert("Erro ao cadastrar")
+    }
+}
+).catch((err)=>{
+    console.log(err)
+})
+
+
+}
+</script>
+

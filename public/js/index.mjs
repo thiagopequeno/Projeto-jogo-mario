@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const audio2 = new Audio("./images/lose.mp3");
     const audio = new Audio("./images/musicamario.mp3");
+    let pontuacao = 0;
 
     const gameOverModal = document.getElementById('gameOverModal');
     const restartButton = document.getElementById('restartGame');
@@ -16,10 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         location.reload();  // Recarrega a página para reiniciar o jogo
     });
 
-
+   
+    
     const loop = setInterval(() => {
         const cloudPosition = cloud.offsetLeft;
         const cloudPosition1 = cloud1.offsetRight;
+        
         const pipePosition = pipe.offsetLeft;
         const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", '');
         audio.play();
@@ -38,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cloud1.style.animation='none'
             cloud1.style.right=`${cloudPosition1}px`
 
-
             mario.style.animation = 'none';
             mario.style.bottom = `${marioPosition}px`;
 
@@ -51,16 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             clearInterval(loop);
-
             // Mostrar o modal quando o jogo terminar
             gameOverModal.style.display = 'block';
-
+            
         }
     }, 5)
-
+    
+    
+    
 
     const jump = () => {
         mario.classList.add('jump')
+        
 
         setTimeout(() => {
             mario.classList.remove('jump')

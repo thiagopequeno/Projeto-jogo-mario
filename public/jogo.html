@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.mjs"></script>
+    <title>Its me Mario</title>
+
+</head>
+
+<body>
+    <div class="game-board">
+        <p>Pontuação: <span id="pontuacao">0</span></p>
+
+        <img src="./images/mario.gif" class="mario" alt="">
+        <img src="./images/pipe.png" alt="" class="pipe">
+        <img src="./images/clouds.png" alt="" class="clouds">
+        <img src="./images/clouds.png" alt="" class="clouds1">
+
+        <!-- Modal -->
+        <div id="gameOverModal" class="modal">
+            <div class="modal-content">
+                <img src="./images/perdeu.png" alt="Game Over" class="game-over-image">
+                <button id="restartGame">Reiniciar</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

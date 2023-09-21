@@ -80,6 +80,15 @@ body {
     
 }
 
+#pontuacao {
+    font-size: 24px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    color: #FF5733; /* Cor laranja brilhante */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para efeito 3D */
+    margin-left: 10px; /* Espaçamento à esquerda para separar do texto "Pontuação" */
+}
+
+
 @keyframes mario-animation{
   0%{
     bottom: 0;

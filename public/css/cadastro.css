@@ -1,0 +1,60 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.background-image {
+    background-image: url("https://wallpapers.com/images/featured/super-mario-fkq1k1pst35iab2c.jpg"); /* Coloque aqui a URL da sua imagem do Mario */
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.modal {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com opacidade de 80% */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal h2 {
+    text-align: center;
+    color: #D80000; /* Vermelho Mario */
+}
+
+.modal label {
+    display: block;
+    margin-top: 10px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 2px solid #D80000; /* Vermelho Mario */
+    border-radius: 5px;
+}
+
+.modal button {
+    width: 100%;
+    padding: 10px;
+    background-color: #D80000; /* Vermelho Mario */
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
